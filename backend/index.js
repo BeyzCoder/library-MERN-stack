@@ -11,11 +11,14 @@ const app = express();
 app.use(express.json());
 
 // Middleware for handling CORS POLICY
-app.use(cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"]
-}));
+app.use(cors());
+
+// Option 2
+// app.use(cors({
+//     origin: "http://localhost:3000",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type"]
+// }));
 
 app.get('/', (req, res) => {
     return res.status(234).send(`Welcome to MERN Stack`);
